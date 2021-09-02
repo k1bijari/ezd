@@ -1,65 +1,247 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- title -->
-    <title>F&K</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <body>
-    <!-- nav bar -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">F&K</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" aria-disabled="true">Schedule</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" aria-disabled="true">RSVP</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              More
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#" aria-disabled="true">Hotels</a>
-              <a class="dropdown-item" href="#" aria-disabled="true">Things to do in Boston area </a>
-              <a class="dropdown-item" href="#" aria-disabled="true">Something else here</a>
-              <a class="dropdown-item" href="#" aria-disabled="true">FAQ</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
-    <!-- content -->
-    <div class="container-fluid">
-      <h1>Greetings!</h1>
-      <p>Thanks for visiting our page!</p>
-      <p>We are finalizing our page for now, please vist again later.</p>
+  <title>F&K/FAQ</title>
+</head>
+
+<body>
+
+  <!-- Nav bar -->
+  <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="./index.html">F&K</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="./schedule.html" aria-disabled="true">Schedule</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Travel
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="./accommodation.html" aria-disabled="true">Accommodation</a>
+            <a class="dropdown-item" href="./toboston.html" aria-disabled="true">Travel to Boston</a>
+            <a class="dropdown-item" href="./commute.html" aria-disabled="true">Commute between Ceremony and Reception locations</a>
+            <!-- <a class="dropdown-item" href="#" aria-disabled="true">????</a> -->
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            What to do in the area?
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="./boston.html" aria-disabled="true">Boston</a>
+            <a class="dropdown-item" href="./nh.html" aria-disabled="true">Hikes in nearby New Hampshire</a>
+            <a class="dropdown-item" href="./maine.html" aria-disabled="true">Maine</a>
+            <a class="dropdown-item" href="cape.html" aria-disabled="true">Cape Cod</a>
+          </div>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./rsvp.html" aria-disabled="true">RSVP</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Miscellaneous
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <!-- <a class="dropdown-item" href="#" aria-disabled="true">...</a> -->
+            <a class="dropdown-item" href="./covid.html" aria-disabled="true">COVID Updates</a>
+            <a class="dropdown-item" href="./faq.html" aria-disabled="true">FAQ</a>
+          </div>
+        </li>
+      </ul>
     </div>
+  </nav>
+  <!-- End of nav bar -->
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="display-4" style="font-family: 'Dancing Script'!important;">FAQ</h1>
+      <hr class="my-4">
+
+      <!-- welcome info -->
+      <br>
+
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-10 mx-auto">
+            <div class="accordion" id="faqExample">
+              <div class="card">
+                <div class="card-header p-2" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                      aria-expanded="true" aria-controls="collapseOne" style="font-size: 120%;">
+                      Q: Should/can we buy our (plane) tickets already?
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                  <div class="card-body">
+                    <b>Answer:</b> As much as we love the idea of assuming that everything will be “normal” next May,
+                    that does unfortunately not seem certain at this point. If travel restrictions for people traveling
+                    from Europe are likely to still be in place next May, we are considering postponing our celebration
+                    (and will of course also do that in case of a "new" COVID outbreak in the area...).
+                    We will decide on that end of this year and will update you via email as well as on this website. If
+                    you can book your ticket already with the option of rescheduling the travel dates if needed, that
+                    could be a good option. Our apologies for these uncertainties and thank you for being flexible!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-2" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+                      style="font-size: 120%;">
+                      Q: Do you have reserved any rooms in hotels in the area?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                  <div class="card-body">
+                    <b>Answer:</b> As you can imagine, the Boston area offers a huge variety of hotels. Depending on
+                    your travel plans a hotel outside the city close to the reception location or a one in the middle of Boston might be
+                    more convenient. Therefore, we have – as of now – not reserved any rooms. We have, however, listed a
+                    few options <a href="./accommodation.html">here</a>. If you need help with a reservation or have any questions, please reach out to us!
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-2" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
+                      style="font-size: 120%;">
+                      Q. Where can we park?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                  <div class="card-body">
+                    <b>Answer:</b> There is ample parking space available at Bellevue Golf Club. We are currently
+                    looking into
+                    different parking options near Faith Lutheran Church, we will add more information soon!
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="card">
+                <div class="card-header p-2" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Q. What is the next question?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                  <div class="card-body">
+                    The answer to this question can go here. This FAQ example can contain all the Q/A that is needed.
+                  </div>
+                </div>
+              </div> -->
+            </div>
+
+          </div>
+        </div>
+        <!--/row-->
+      </div>
+      <!--container-->
+
+      <!-- to submit more questions -->
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-10 mx-auto">
+            <hr>
+            <form id="">
+              <div class="form-group">
+                <label for="email">If you have any questions we did not address please let us know!</label>
+                <input type="email" class="form-control form-control-lg" id="email" placeholder="name@example.com"
+                  required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control form-control-lg" id="question" rows="5"
+                  placeholder="New question"></textarea>
+              </div>
+              <small>
+                * By submitting this form you allow us to use the provided information for our planning.
+              </small> <br>
+              <button id="faqForm" type="button" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <!--  -->
+    </div>
+  </div>
 
 
 
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Copyright -->
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+      Designed by F&K using Bootstrap
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link href="./files/custom.css" rel="stylesheet">
+  <script src="./files/custom.js"></script>
+  <!-- firebase -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBYjVHxNYXwl4KFm0cuhipYV4MpSZ6CXgw",
+      authDomain: "rsvp-data-21.firebaseapp.com",
+      projectId: "rsvp-data-21",
+      storageBucket: "rsvp-data-21.appspot.com",
+      messagingSenderId: "537742929954",
+      appId: "1:537742929954:web:217ab2bd37c608a65dda7b"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</body>
+
 </html>
