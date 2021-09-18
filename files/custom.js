@@ -43,14 +43,14 @@ $("form").submit(function (event) {
     event.preventDefault();
     var gnames = $('#gnames').val();
     var email = $('#email').val();
-    var count = $('#count').val();
+    // var count = $('#count').val();
     var message = $('#message').val();
     var date = Date().toLocaleString();
 
     firebase.database().ref('RSVP/').push().set({
         gnames: gnames,
         email: email,
-        count: count,
+        // count: count,
         message: message,
         date: date,
     }).then(function (snapshot) {
