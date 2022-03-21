@@ -13,10 +13,60 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="robots" content="noindex">
 
+  <title>F&K/Schedule</title>
 
+  <!-- upload -->
 
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+  //Bucket Configurations
+  var bucketName = 'fkmemorygame';
+  var bucketRegion = 'us-east-1';
+  var IdentityPoolId = 'memory-game';
 
-  <title>F&K/COVID</title>
+  AWS.config.update({
+                  region: bucketRegion,
+                  credentials: new AWS.CognitoIdentityCredentials({
+                      IdentityPoolId: IdentityPoolId
+                  })
+              });
+
+              var s3 = new AWS.S3({
+                  apiVersion: '2006-03-01',
+                  params: {Bucket: bucketName}
+          });
+  </script>
+
+  <!-- js upload func -->
+  <script type="text/javascript">
+    function s3upload() {
+       var files = document.getElementById('fileUpload').files;
+       if (files) 
+       {
+         var file = files[0];
+         var fileName = file.name;
+         var filePath = 's3://fkmemorygame/' + fileName;
+         var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/fkmemorygame/' +  filePath;
+         s3.upload({
+            Key: filePath,
+            Body: file,
+            ACL: 'public-read'
+            }, function(err, data) {
+            if(err) {
+            reject('error');
+            }
+            alert('Successfully Uploaded!');
+            }).on('httpUploadProgress', function (progress) {
+            var uploaded = parseInt((progress.loaded * 100) / progress.total);
+            $("progress").attr('value', uploaded);
+          });
+       }
+    };
+    </script>
+
+  <!-- end of upload -->
+
 </head>
 
 <body>
@@ -24,7 +74,8 @@
   <!-- Nav bar -->
   <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
     <a class="navbar-brand" href="./index.html">F&K</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -36,18 +87,21 @@
           <a class="nav-link" href="./schedule.html" aria-disabled="true">Schedule</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Travel
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="./accommodation.html" aria-disabled="true">Accommodation</a>
             <a class="dropdown-item" href="./toboston.html" aria-disabled="true">Travel to Boston</a>
-            <a class="dropdown-item" href="./commute.html" aria-disabled="true">Commute between Ceremony and Reception locations</a>
+            <a class="dropdown-item" href="./commute.html" aria-disabled="true">Commute between Ceremony and Reception
+              locations</a>
             <!-- <a class="dropdown-item" href="#" aria-disabled="true">????</a> -->
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             What to do in the area?
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -62,7 +116,8 @@
           <a class="nav-link" href="./rsvp.html" aria-disabled="true">RSVP</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             Miscellaneous
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -78,53 +133,35 @@
 
   <div class="container-fluid">
     <div class="jumbotron">
-      <h1 class="display-4" style="font-family: 'Dancing Script'!important;">Covid Updates</h1>
+      <h1 class="display-4" style="font-family: 'Dancing Script'!important;">Photo-Upload</h1>
       <!-- <p class="lead">Welcome to our wedding page!</p> -->
       <hr class="my-4">
       <!-- </div> -->
 
-      <!-- welcome info -->
-      <!-- <br>
-      <p style="font-size:130%;">Closer to our wedding date, we will provide here the latest updates regarding COVID
-        rules in MA as well as (international) travel restrictions – and any possible impacts on our wedding plans.</p>
-      <br> -->
 
-
-      <br>
-      <p style="font-size:130%;">As of now (March 2022), no COVID restrictions affecting our wedding plans are in place in MA. 
-        For everyone's safety, we ask adults and older children to be fully vaccinated. Thank you so much and please let us know if you have any questions!
-        <br>
-To enter the US, guests traveling from abroad will furthermore need a negative COVID test not older than 24 hours than the planned departure time. 
-        For more information, please check the <a target="_blank" href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/testing-international-air-travelers.html">CDC website</a>.</p>
-      <br>
-
-      <!-- <div class="row justify-content-center">
+      <div class="row justify-content-center">
         <div class="col-8">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td>Ceremony at Faith Lutheran Church</td>
-                <td><span class='tilda'>~</span>2:00 PM</td>
-              </tr>
-              <tr>
-                <td>Coffee and refreshments at Faith Lutheran Church</td>
-                <td>4:00 – 5:00 PM</td>
-              </tr>
-              <tr>
-                <td>Commute to Bellevue Golf Club</td>
-                <td>5:30 – 6:00 PM</td>
-              </tr>
-              <tr>
-                <td>Reception, dinner, and dance at Bellevue Golf Club</td>
-                <td>6:00 PM – 12:00 AM</td>
-              </tr>
-            </tbody>
-          </table>
+
+          <form>
+            <div class="form-group">
+              <label class="inline" for="picture">Picture: </label>
+              <input type="file" class="form-control-file" id="fileUpload">
+              <br>
+              <label for="msg">Comment:</label>
+              <input type="text" class="form-control" id="uploadmessage" aria-describedby="messageHelp" placeholder="Leave a comment if you wish">
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+            </div>
+          </form>
+          <hr>
+          <button onclick="s3upload()">Submit</button>
+
         </div>
-      </div> -->
+      </div>
 
 
-      <!--  -->
+
     </div>
   </div>
 
@@ -138,10 +175,6 @@ To enter the US, guests traveling from abroad will furthermore need a negative C
     </div>
     <!-- Copyright -->
   </footer>
-
-
-
-
 
 
   <!-- Optional JavaScript -->
