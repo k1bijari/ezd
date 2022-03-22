@@ -23,7 +23,7 @@
   //Bucket Configurations
   var bucketName = 'fkmemorygame';
   var bucketRegion = 'us-east-1';
-  var IdentityPoolId = 'memory-game';
+  var IdentityPoolId = 'us-east-1:9521f79c-0a04-4006-b1a7-c97561b35eec';
 
   AWS.config.update({
                   region: bucketRegion,
@@ -46,20 +46,21 @@
        {
          var file = files[0];
          var fileName = file.name;
-         var filePath = 's3://fkmemorygame/' + fileName;
+         var filePath = 'pics/' + fileName;
          var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/fkmemorygame/' +  filePath;
          s3.upload({
             Key: filePath,
             Body: file,
-            ACL: 'public-read'
+            // ACL: 'public-read'
             }, function(err, data) {
             if(err) {
-            reject('error');
+            return alert('error while uploading, please try again later');
             }
             alert('Successfully Uploaded!');
             }).on('httpUploadProgress', function (progress) {
             var uploaded = parseInt((progress.loaded * 100) / progress.total);
-            $("progress").attr('value', uploaded);
+            // $("progress").attr('width', uploaded);
+            document.getElementById("progress").style.width = uploaded+'%';
           });
        }
     };
@@ -151,7 +152,7 @@
               <input type="text" class="form-control" id="uploadmessage" aria-describedby="messageHelp" placeholder="Leave a comment if you wish">
             </div>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+              <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
             </div>
           </form>
           <hr>
