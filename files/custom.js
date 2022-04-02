@@ -91,3 +91,21 @@ $(document).ready(function () {
 $('.carousel').carousel({
     interval: 3000
   })
+
+
+// food menu - adding new guest
+var party = 1;
+function guest_fields() {
+ 
+    party++;
+    var objTo = document.getElementById('new_guest_name')
+    var divtest = document.createElement("div");
+	divtest.setAttribute("class", "form-group removeclass"+party);
+	var rdiv = 'removeclass'+party;
+    divtest.innerHTML = '<div class="form-group"> <div class="row"> <div class="col-6"> <input type="text" class="form-control form-control-lg" id="gname1" placeholder="Guest name" required> </div> <div class="col-6"> <!-- <label for="exampleFormControlSelect1">Example select</label> --> <div class="input-group"> <select class="form-control form-control-lg" id="exampleFormControlSelect1"> <option>Please select a meal choice</option> <option>Option 1</option> <option>Option 2</option> <option>Option 3</option> <option>Option 4</option> <option>Kid\'s</option> </select> <div class="input-group-append"> <button title="Delete" class="btn btn-warning btn-lg" type="button" onclick="remove_guest_fields('+ party +');">-</button> </div> </div> </div> </div> </div>';
+    
+    objTo.appendChild(divtest)
+}
+   function remove_guest_fields(rid) {
+	   $('.removeclass'+rid).remove();
+   }
