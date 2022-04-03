@@ -60,7 +60,6 @@ $("form").submit(function (event) {
     });
 
     // console.log('ran!'+count+ email);
-    // alert('tets');
 
 });
 
@@ -87,6 +86,46 @@ $(document).ready(function () {
     });
 });
 
+// for new quetions
+function read_names(){
+    return new Promise(resolve => {
+        var guests = document.getElementsByName('guests[]'); 
+        var foodChoice = document.getElementsByName('foodChoice[]');
+        var guest_choice = "";
+        for (var i = 0; i<guests.length; i++){
+            guest_choice += guests[i].value + "-" + foodChoice[i].value;
+        }
+        setTimeout(() => resolve(guest_choice), 500)
+    })
+}
+
+$(document).ready(function () {
+    $("#foodSubmit").click(async function (event) {
+        event.preventDefault();
+        var date = Date().toLocaleString();
+        var email = $('#email').val();
+
+        try {
+            let guest_choice = await read_names();
+            console.log('triggered!' + guest_choice);
+        } catch(error){
+            alert("We could not save your request! Please refresh the page and try again later!"+error);
+        }
+
+        // firebase.database().ref('Questions/').push().set({
+        //     email: email,
+        //     question: question,
+        //     date: date,
+        // }).then(function (snapshot) {
+        //     alert('We will get back to you with an answer as soon as we can!')
+        // }, function (error) {
+        //     alert('Something went wrong! Please refresh the page and try again.');
+        // });
+
+        // alert('tets');
+    });
+});
+
 // carousel speed
 $('.carousel').carousel({
     interval: 3000
@@ -102,7 +141,7 @@ function guest_fields() {
     var divtest = document.createElement("div");
 	divtest.setAttribute("class", "form-group removeclass"+party);
 	var rdiv = 'removeclass'+party;
-    divtest.innerHTML = '<div class="form-group"> <div class="row"> <div class="col-6"> <input type="text" class="form-control form-control-lg" id="gname1" placeholder="Guest name" required> </div> <div class="col-6"> <!-- <label for="exampleFormControlSelect1">Example select</label> --> <div class="input-group"> <select class="form-control form-control-lg" id="exampleFormControlSelect1"> <option>Please select a meal choice</option> <option>Option 1</option> <option>Option 2</option> <option>Option 3</option> <option>Option 4</option> <option>Kid\'s</option> </select> <div class="input-group-append"> <button title="Delete" class="btn btn-warning btn-lg" type="button" onclick="remove_guest_fields('+ party +');">-</button> </div> </div> </div> </div> </div>';
+    divtest.innerHTML = '<div class="form-group"> <div class="row"> <div class="col-6"> <input type="text" class="form-control form-control-lg" id="gname1" placeholder="Guest name" required> </div> <div class="col-6"> <!-- <label for="exampleFormControlSelect1">Example select</label> --> <div class="input-group"> <select class="form-control form-control-lg" id="foodid" name="foodChoice"> <option>Please select a meal choice</option> <option>Option 1</option> <option>Option 2</option> <option>Option 3</option> <option>Option 4</option> <option>Kid\'s</option> </select> <div class="input-group-append"> <button title="Delete" class="btn btn-warning btn-lg" type="button" onclick="remove_guest_fields('+ party +');">-</button> </div> </div> </div> </div> </div>';
     
     objTo.appendChild(divtest)
 }

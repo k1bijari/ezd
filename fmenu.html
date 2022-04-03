@@ -155,24 +155,22 @@
           </div>
         </div>
           <div id="new_guest_name">
-
           </div>
 
           <div class="form-group">
             <div class="row">
               <div class="col-6">
-                <input type="text" class="form-control form-control-lg" id="gname1" placeholder="Guest name" required>
+                <input type="text" class="form-control form-control-lg" name="guests[]" id="gid" placeholder="Guest name" required>
               </div>
             <div class="col-6">
-              <!-- <label for="exampleFormControlSelect1">Example select</label> -->
               <div class="input-group">
-                <select class="form-control form-control-lg" id="exampleFormControlSelect1">
-                  <option>Please select a meal choice</option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
-                  <option>Option 4</option>
-                  <option>Kid's</option>
+                <select class="form-control form-control-lg" id="foodid" name="foodChoice">
+                  <option value="ns">Please select a meal choice</option>
+                  <option value="opt 1">Option 1</option>
+                  <option value="opt 2">Option 2</option>
+                  <option value="opt 3">Option 3</option>
+                  <option value="opt 4">Option 4</option>
+                  <option value="opt 5">Kid's</option>
                 </select>
                 <div class="input-group-append">
                   <button title="Add a new" class="btn btn-success btn-lg" type="button"  onclick="guest_fields();"> + </button>
@@ -183,7 +181,6 @@
           </div>
           
           <div class="form-group">
-
             <label for="message">Note</label>
             <textarea class="form-control form-control-lg" id="message" rows="4"></textarea>
           </div>
@@ -192,7 +189,7 @@
           * By submitting this form you allow us to use the provided information for our planning.
         </small>
         <br><br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="foodSubmit" type="button"  class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>
